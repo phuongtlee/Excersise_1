@@ -21,15 +21,19 @@ const Excersise1 = () => {
   return (
     <ImageBackground
       source={require("./img/wp2721266.jpg")}
-      style={styles.container}
+      style={{
+        ...styles.container,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
     >
       <Image
-        style={{ ...styles.image, marginTop: 100, marginLeft: 5 }}
+        style={{ ...styles.image }}
         source={require("./img/94694379_p0.jpg")}
       />
-      <Text style={styles.text}>REGISTER</Text>
 
-      <View style={{ padding: 10 }}>
+      <View style={{width: 400}}>
+        <Text style={{ ...styles.text, fontStyle: "italic", margin: 5}}>REGISTER</Text>
         <TextInput
           style={styles.textInput}
           onChangeText={setUser}
@@ -46,7 +50,7 @@ const Excersise1 = () => {
         />
 
         <TouchableHighlight style={styles.button} onPress={onPress}>
-          <Text style={styles.button}>LOGIN</Text>
+          <Text style={{...styles.textButton, fontWeight: 'bold'}}>LOGIN</Text>
         </TouchableHighlight>
       </View>
     </ImageBackground>
@@ -68,8 +72,8 @@ const styles = StyleSheet.create({
     // alignContent:'center'
   },
   text: {
-    // fontVariant: "italic",
-    marginLeft: 340,
+    textAlign: 'right',
+    color: 'white'
   },
   textInput: {
     margin: 5,
@@ -89,6 +93,6 @@ const styles = StyleSheet.create({
   },
   textButton: {
     padding: 5,
-    fontSize: 20,
+    fontSize: 15,
   },
 });
